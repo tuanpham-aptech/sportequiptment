@@ -7,7 +7,7 @@ if(isset($_GET['id'])){
     $con->query("update products set status = 0 where product_id = $id");
   }else{
     $con->query("delete from products where product_id = $id");
-    unlink("../upload_images/".$_GET['image']);
+    unlink("../assets/upload_images/".$_GET['image']);
   }
 }
 $query = "select *from  products";

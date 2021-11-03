@@ -19,7 +19,7 @@ if(isset($_POST['title'])){
         $price = $_POST['price'];
         $desc = $_POST['description'];
         $status = $_POST['status']; 
-        $store = "../upload_images/";
+        $store = "../assets/upload_images/";
         // lấy tên ảnh  
         $imageName = $_FILES['image']['name'];
         $imageTemp = $_FILES['image']['tmp_name'];
@@ -38,58 +38,67 @@ if(isset($_POST['title'])){
          
             $sql = " update products set product_cat = '$cat_id',product_brand = '$brand_id',name='$pro_title',price = '$price',image='$imageName',description='$desc',status = '$status' where product_id = ".$row_product['product_id'];
             $con->query($sql);
-            header('location:?option=list_product');
+            header('location:?option=list_products');
     }
 }
 $brand = $con->query("select *from brands");
 $category = $con->query("select *from categories");
 
 ?>
-<h2 class="page-title">Chỉnh sửa sản phẩm  </h2>
-<form method="post" enctype="multipart/form-data">
-    <div class="form-group">
-        <label for="">Tên sản phẩm  </label>
-        <input type="text" name="title" value="<?=$row_product['name']?>" class="text-input" required>
+<div class="form-container">
+    <div class="head">Chỉnh sửa sản phẩm </div>
+    <hr class="horiz">
+    <div class="div1">
+        <form  method="post" enctype="multipart/form-data">
+            <div class="form-content">
+                <div class="inputdetails">
+                    <span class="labels">Tên sản phẩm</span>
+                    <input type="text" name="title" value="<?=$row_product['name']?>" required>
+                </div>
+                <div class="inputdetails">
+                    <span class="labels">Danh mục </span>
+                    <select name="product_cat"  id="brand-id">
+                        <option hidden>--Chọn danh mục--</option>
+                        <?php foreach($category as $item):?>
+                            <option value="<?=$item['cat_id']?>" <?=$item['cat_id']== $row_product['product_cat'] ? 'selected': '' ?>><?=$item['name'];?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="inputdetails">
+                    <span class="labels">Thương hiệu</span>
+                    <select name="product_brand"  id="brand-id">
+                        <option hidden>--Chọn hãng--</option>
+                        <?php foreach($brand as $item):?>
+                            <option value="<?=$item['brand_id']?>" <?=$item['brand_id']== $row_product['product_brand'] ? 'selected': '' ?> ><?=$item['name'];?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="inputdetails">
+                    <span class="labels">Giá </span>
+                    <input type="number" min="100000" value="<?=$row_product['price']?>" name="price" required>
+                </div>
+                <div class="inputdetails">
+                    <span class="labels">Ảnh</span>
+                    <input type="file" name="image" id="image" class="text-input" >
+                    <img src="../assets/upload_images/<?php echo $pro['image'];?>"  width="150"  height="150" alt="">
+                </div>
+                <div class="inputdetails">
+                    <span class="labels">Mô tả</span>
+                    <textarea name="description"  id="description"><?=$row_product['description']?></textarea>
+                </div>
+            </div>
+            <div class="inputcheck">
+                <input type="radio" name="status" value="1" <?=$row_product['status']==1 ?'checked': '' ?> checked>
+                <label for="Active"><span></span>Active</label>
+                <input type="radio" name="status" value="0" <?=$row_product['status']==0 ?'checked': '' ?> >
+                <label for="Unactive"><span></span>Unactive</label>
+            </div>
+           
+            <div class="btn">
+                <input type="submit" name="btn_send" value="Thêm mới ">
+                <a href="?option=list_products">&lt;&lt;Trở lại </a>
+            </div>
+        </form>
+
     </div>
-    <div class="form-group">
-        <label for="">Danh mục </label>
-        <select name="product_cat"  id="brand-id">
-            <option hidden>--Chọn danh mục--</option>
-            <?php foreach($category as $item):?>
-                <option value="<?=$item['cat_id']?>" <?=$item['cat_id']== $row_product['product_cat'] ? 'selected': '' ?>><?=$item['name'];?></option>
-            <?php endforeach; ?>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="">Thương hiệu  </label>
-        <select name="product_brand"  id="brand-id">
-            <option hidden>--Chọn hãng--</option>
-            <?php foreach($brand as $item):?>
-                <option value="<?=$item['brand_id']?>" <?=$item['brand_id']== $row_product['product_brand'] ? 'selected': '' ?> ><?=$item['name'];?></option>
-            <?php endforeach; ?>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="">Giá   </label>
-        <input type="number" min="100000" value="<?=$row_product['price']?>" name="price" class="text-input" required>
-    </div>
-    <div class="form-group">
-        <label for="">Ảnh  </label>
-        <input type="file" name="image" id="image" class="text-input" >
-        <img src="../upload_images/<?=$row_product['image']?>"  width="150"  height="150" alt="">
-    </div>
-    <div class="form-group">
-        <label for="">Mô tả </label>
-        <textarea name="description"  id="description"><?=$row_product['description']?></textarea>
-        <script >CKEDITOR.replace("description");</script>
-    </div>
-    <div class="form-group">
-        <label for="">Trạng thái  </label>
-        <span> Active</span><input type="radio" <?=$row_product['status']==1 ?'checked': '' ?> checked name="status" value="1">
-        <span>Unactive</span><input type="radio" <?=$row_product['status']==0 ?'checked': '' ?> name="status" value="0">
-    </div>
-    <div class="form-group">
-        <input type="submit" name="btn_send" class="btn-send" value="Cập nhật ">
-        <a href="?option=list_products" style="text-decoration: none;">&lt;&lt;Trở lại </a>
-    </div>
-</form>
+</div>

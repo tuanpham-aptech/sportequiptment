@@ -11,7 +11,7 @@ if(isset($_POST['title'])){
         $price = $_POST['price'];
         $desc = $_POST['description'];
         $status = $_POST['status']; 
-        $store = "../upload_images/";
+        $store = "../assets/upload_images/";
         $imageName = $_FILES['image']['name'];
         $imageTemp = $_FILES['image']['tmp_name'];
         $exp3 = substr($imageName,strlen($imageName)-3); 
@@ -77,7 +77,7 @@ $category = $con->query("select *from categories");
             <div class="inputcheck">
                 <input type="radio" name="status" value="1" id="active" checked>
                 <label for="Active"><span></span>Active</label>
-                <input type="radio" name="status" value="1" id="unactive">
+                <input type="radio" name="status" value="0" id="unactive">
                 <label for="Unactive"><span></span>Unactive</label>
             </div>
            

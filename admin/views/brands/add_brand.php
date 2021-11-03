@@ -27,7 +27,7 @@ if(isset($_POST['title'])){
             <div class="inputcheck">
                 <input type="radio" name="status" value="1" id="active" checked>
                 <label for="Active"><span></span>Active</label>
-                <input type="radio" name="status" value="1" id="unactive">
+                <input type="radio" name="status" value="0" id="unactive">
                 <label for="Unactive"><span></span>Unactive</label>
             </div>
            

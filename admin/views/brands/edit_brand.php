@@ -1,4 +1,3 @@
-
 <?php 
 $id = $_GET['id'];
 $query = "select *from brands where brand_id = '$id' ";
@@ -18,20 +17,28 @@ if(isset($_POST['title'])){
     }
 }
 ?>
-<div class="container"></div>
-<h2 class="page-title">Chỉnh sửa thương hiệu  </h2>
-<form method="post">
-    <div class="form-group">
-        <label for="">Tên thương hiệu </label>
-        <input type="text" name="title" value="<?=$brand['name'];?>" class="text-input" required>
+<div class="form-container">
+    <div class="head">Chỉnh sửa thương hiệu </div>
+    <hr class="horiz">
+    <div class="div1">
+        <form  method="post">
+            <div class="form-content">
+                <div class="inputdetails">
+                    <span class="labels">Tên thương hiệu</span>
+                    <input type="text" name="title" value="<?=$brand['name'];?>" class="text-input" required>
+                </div>
+            </div>
+            <div class="inputcheck">
+                <input type="radio" name="status" <?=$brand['status']==1?'checked':''?> value="1" id="active" checked>
+                <label for="Active"><span></span>Active</label>
+                <input type="radio" name="status" <?=$brand['status']==0?'checked':''?> value="0" id="unactive">
+                <label for="Unactive"><span></span>Unactive</label>
+            </div>
+           
+            <div class="btn">
+                <input type="submit" name="btn_send" value="Cập nhật ">
+                <a href="?option=list_cat">&lt;&lt;Trở lại </a>
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-        <label for="">Trạng thái  </label>
-        <span> Active</span><input type="radio" <?=$brand['status']==1?'checked':''?> name="status" value="1">
-        <span>Unactive</span><input type="radio" <?=$brand['status']==0?'checked':''?> name="status" value="0">
-    </div>
-    <div class="form-group">
-        <input type="submit" name="btn_send" class="btn-send" value="Thêm mới ">
-        <a href="?option=list_cat" style="text-decoration: none;">&lt;&lt;Trở lại </a>
-    </div>
-</form>
+</div>

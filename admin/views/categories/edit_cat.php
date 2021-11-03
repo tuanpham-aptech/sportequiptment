@@ -19,20 +19,29 @@ if(isset($_POST['title'])){
     }
 }
 ?>
-<h2 class="page-title">Chỉnh sửa  danh mục </h2>
-<form method="post">
+<div class="form-container">
+    <div class="head">Chỉnh sửa danh mục </div>
+    <hr class="horiz">
     <p style="color:red;"><?=isset($alert)?$alert: ''?></p>
-    <div class="form-group">
-        <label for="">Tên danh mục </label>
-        <input type="text" name="title" value="<?=$cat['name'];?>" class="text-input" >
+    <div class="div1">
+        <form  method="post">
+            <div class="form-content">
+                <div class="inputdetails">
+                    <span class="labels">Tên danh mục </span>
+                    <input type="text" name="title" value="<?=$cat['name'];?>" >
+                </div>
+            </div>
+            <div class="inputcheck">
+                <input type="radio" name="status" <?=$cat['status']==1?'checked':''?> value="1" id="active" checked>
+                <label for="Active"><span></span>Active</label>
+                <input type="radio" name="status" <?=$cat['status']==0?'checked':''?> value="0" id="unactive">
+                <label for="Unactive"><span></span>Unactive</label>
+            </div>
+           
+            <div class="btn">
+                <input type="submit" name="btn_send" value="Cập nhật ">
+                <a href="?option=list_cat">&lt;&lt;Trở lại </a>
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-        <label for="">Trạng thái  </label>
-        <span> Active</span><input type="radio" <?=$cat['status']==1?'checked':''?> name="status" value="1">
-        <span>Unactive</span><input type="radio" <?=$cat['status']==0?'checked':''?> name="status" value="0">
-    </div>
-    <div class="form-group">
-        <input type="submit" name="btn_send" class="btn-send" value="Thêm mới ">
-        <a href="?option=list_cat" style="text-decoration: none;">&lt;&lt;Trở lại </a>
-    </div>
-</form>
+</div>
