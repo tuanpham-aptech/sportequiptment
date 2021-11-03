@@ -1,0 +1,7 @@
+@media (max-width:750px) {
+    .table thead {
+        display: none;
+    }
+
+    .table .table th, .table .td,
+}

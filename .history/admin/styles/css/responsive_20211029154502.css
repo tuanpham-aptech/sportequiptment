@@ -1,0 +1,20 @@
+@media (max-width:750px) {
+    .table thead {
+        display: none;
+    }
+
+    .table .table tbody, .table td, .table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        margin-bottom: 15px;
+    }
+
+    .title .heading {
+        text-align: center;
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+}
