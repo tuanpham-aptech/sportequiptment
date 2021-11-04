@@ -33,24 +33,19 @@ if(isset($_POST['title'])){
 $brand = $con->query("select *from brands");
 $category = $con->query("select *from categories");
 ?>
-<div class="form-container">
+<div class="form-container diffirent">
     <div class="head">Thêm sản phẩm </div>
     <hr class="horiz">
     <div class="div1">
         <form  method="post" enctype="multipart/form-data">
-            <div class="form-content">
+            <div class="form-content diffirent">
                 <div class="inputdetails">
                     <span class="labels">Tên sản phẩm</span>
                     <input type="text" name="title" class="text-input" required>
                 </div>
                 <div class="inputdetails">
-                    <span class="labels">Danh mục </span>
-                    <select name="product_cat"  id="brand-id">
-                        <option hidden>--Chọn danh mục--</option>
-                        <?php foreach($category as $item):?>
-                            <option value="<?=$item['cat_id']?>"><?=$item['name'];?></option>
-                        <?php endforeach; ?>
-                    </select>
+                    <span class="labels">Giá </span>
+                    <input type="number" min="100000" name="price" class="text-input" required>
                 </div>
                 <div class="inputdetails">
                     <span class="labels">Thương hiệu</span>
@@ -62,8 +57,13 @@ $category = $con->query("select *from categories");
                     </select>
                 </div>
                 <div class="inputdetails">
-                    <span class="labels">Giá </span>
-                    <input type="number" min="100000" name="price" class="text-input" required>
+                    <span class="labels">Danh mục </span>
+                    <select name="product_cat"  id="brand-id">
+                        <option hidden>--Chọn danh mục--</option>
+                        <?php foreach($category as $item):?>
+                            <option value="<?=$item['cat_id']?>"><?=$item['name'];?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
                 <div class="inputdetails">
                     <span class="labels">Ảnh</span>

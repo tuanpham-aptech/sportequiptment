@@ -150,6 +150,16 @@
     box-shadow: 0 5px 10px black;
 }
 
+.form-container.diffirent {
+    max-width:800px;
+    width:100%;
+    margin: 0 auto;
+    margin-top:30px;
+    padding:25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px black;
+}
+
 .head {
     position: relative;
     font-size:25px;
@@ -172,6 +182,11 @@
 .form-content .inputdetails {
     margin-bottom: 15px;
     width: calc(100% - 20px);
+}
+
+.form-content.diffirent .inputdetails {
+    margin-bottom: 15px;
+    width: calc((100%/2) - 20px);
 }
 
 .labels {

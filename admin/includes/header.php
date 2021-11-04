@@ -17,8 +17,8 @@ header("Pragma: no-cache");
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Mulish:wght@300&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles/css/style.css">
-    <link rel="stylesheet" href="styles/css/main.css?v=2">
-    <link rel="stylesheet" href="styles/css/responsive.css?v=1">
+    <link rel="stylesheet" href="styles/css/main.css?v=11">
+    <link rel="stylesheet" href="styles/css/responsive.css">
 </head>
 <body>
     <div class="wrapper">
