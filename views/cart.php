@@ -8,8 +8,10 @@ if(isset($_GET['action'])){
         case 'add':
             if(array_key_exists($id,array_keys($_SESSION['cart']))){
                 $_SESSION['cart'][$id]+=1;
+                header("Location:.");
             }else{
                 $_SESSION['cart'][$id]=1;
+                header("Location:.");
             }
             break;
         case 'update':

@@ -99,6 +99,9 @@ $huy = mysqli_num_rows($con->query("select *from orders where status =4 "));
                             <div class="sidebar-drop-item">
                                 <a href="index.php?option=printmember">In bảng members </a>
                             </div>
+                            <div class="sidebar-drop-item">
+                                <a href="index.php?option=printorder">In đơn hàng </a>
+                            </div>
                         </div>
                     </div>
                     <div class="sidebar-item">

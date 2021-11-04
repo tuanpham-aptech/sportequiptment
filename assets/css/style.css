@@ -153,6 +153,17 @@
     padding-right: 10px;
 }
 
+.header__search--qty {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top:40%;
+    border-radius: 15px;
+    right: 8%;
+    background-color:yellow;
+    color:#000;
+}
+
 .header__bars-btn{
     width:48px;
     height: 48px;

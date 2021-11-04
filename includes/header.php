@@ -76,12 +76,16 @@ include "includes/db.php";
                     <input type="submit" class="header__search--search-btn" value="Search">
                   </form>
                   <?php if(empty($_SESSION['member'])):?>
-                    <a href="index.php?option=cart" class="header__search--cart"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="index.php?option=cart" class="header__search--cart">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
                   <?php else: ?>
                     <a href="index.php?option=cart" class="header__search--cart"><i class="fas fa-shopping-cart"></i></a>
+                    <span class="header__search--qty">
+                        
+                    </span>
                   <?php endif; ?>
-                </div>
-               
+                </div> 
             </div>
           <label  for= "header-mobile-input" class="header__bars-btn">
             <i class="fa fa-bars"></i>
