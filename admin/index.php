@@ -20,7 +20,7 @@ if(isset($_POST['username'])){
 }
 include "includes/header.php";
 ?>
-<section class="admin-wraper">
+<section style="background-image: url('../assets/upload_images/bglogin.jfif');" class="admin-wraper">
     <?php
     if(isset($_SESSION['admin'])){
         include "includes/sidebar.php";

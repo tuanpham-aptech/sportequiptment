@@ -48,6 +48,9 @@
             case 'printmember':
               include "views/prints/printmember.php";
               break;
+            case 'printorder':
+              include "views/prints/printorder.php";
+              break;
             case 'order_detail':
               include "views/orders/order_detail.php";
               break;

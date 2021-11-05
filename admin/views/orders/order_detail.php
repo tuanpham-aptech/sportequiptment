@@ -1,5 +1,5 @@
 <?php 
-if(isset($_GET['action'])){
+if(isset($_GET['action'])){// nếu bắt dc action update nút tăng giảm số lượng 
     $orderid=$_GET['order_id'];
     $productid=$_GET['product_id'];
     $condition="where order_id='$orderid' and product_id='$productid'";
@@ -25,109 +25,110 @@ $order = mysqli_fetch_array($con->query($sql));
 ?>
 <div class="show">
     <div class="title">
-        <h2 class="heading">CHI TIẾT ĐƠN HÀNG <br>MÃ ĐƠN HÀNG (<?=$order['id']?>)</h2>
+        <h2 class="heading">CHI TIẾT ĐƠN HÀNG <br><span style="font-size:18px">MÃ ĐƠN HÀNG
+                (<?=$order['id']?>)</span></h2>
     </div>
-<h2 class="head">NGÀY TẠO ĐƠN </h2>
+</div>
+<span class="head">NGÀY TẠO ĐƠN </span>
 <div style="color:red; font-size:1.4rem;" class="orderdate"><?=$order['orderdate'];?></div>
-<h2 class="head">THÔNG TIN NGƯỜI ĐẶT HÀNG </h2>
-<table class="table">
-    <tbody>
-        <tr>
-            <td>Họ và Tên </td>
-            <td><?php echo $order['fullname'];?></td>
-        </tr>
-        <tr>
-            <td>Điện thoại</td>
-            <td><?php echo $order['mobilemember'];?></td>
-        </tr>
-        <tr>
-            <td>Địa chỉ </td>
-            <td><?php echo $order['addressmember'];?></td>
-        </tr>
-        <tr>
-            <td>Email</td>
-            <td><?php echo $order['emailmember'];?></td>
-        </tr>
-        <tr>
-            <td>Ghi chú </td>
-            <td><?php echo $order['note'];?></td>
-        </tr>
-    </tbody>
-</table>
-<h2 class="head">THÔNG TIN NGƯỜI NHẬN HÀNG </h2>
-<table class="table">
-    <tbody>
-        <tr>
-            <td>Họ và Tên </td>
-            <td><?php echo $order['name'];?></td>
-        </tr>
-        <tr>
-            <td>Điện thoại</td>
-            <td><?php echo $order['mobile'];?></td>
-        </tr>
-        <tr>
-            <td>Địa chỉ </td>
-            <td><?php echo $order['address'];?></td>
-        </tr>
-        <tr>
-            <td>Email</td>
-            <td><?php echo $order['email'];?></td>
-        </tr>
-    </tbody>
-</table>
-<h2 class="head">PHƯƠNG THỨC THANH TOÁN </h2>
-<section class="payment">
-    <h3 style="color:red;"><?= $order['nameordermethod'];?></h3>
-</section>
+<div class="show">
+    <div class="title">
+        <h2 class="heading">THÔNG TIN NGƯỜI ĐẶT HÀNG </h2>
+    </div>
+    <table class="table">
+        <thead>
+            <th>HỌ TÊN</th>
+            <th>ĐIỆN THOẠI</th>
+            <th>ĐỊA CHỈ </th>
+            <th>EMAIL</th>
+            <th>GHI CHÚ </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="HỌ TÊN"><?php echo $order['fullname'];?></td>
+                <td data-label="ĐIỆN THOẠI"><?php echo $order['mobilemember'];?></td>
+                <td data-label="ĐỊA CHỈ "><?php echo $order['addressmember'];?></td>
+                <td data-label="EMAIL"><?php echo $order['emailmember'];?></td>
+                <td data-label="GHI CHÚ "><?php echo $order['note'];?></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="show">
+    <div class="title">
+        <h2 class="heading">THÔNG TIN NGƯỜI NHẬN HÀNG </h2>
+    </div>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td data-label="HỌ TÊN"><?php echo $order['name'];?></td>
+                <td data-label="ĐIỆN THOẠI"><?php echo $order['mobile'];?></td>
+                <td data-label="ĐỊA CHỈ "><?php echo $order['address'];?></td>
+                <td data-label="EMAIL"><?php echo $order['email'];?></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="title">
+    <h2 class="heading">PHƯƠNG THỨC THANH TOÁN </h2>
+    <h2 class="heading" style="color:red;font-size:15px;padding-top:8px;">
+        <?= $order['nameordermethod'];?></h2>
+</div>
 <?php 
 $query = "select b.*,c.name,c.image from orders a join orderdetail b on a.id = b.order_id join products c on b.product_id = c.product_id where a.id = $order[id]";
 $orderdetails = $con->query($query);
 ?>
 <form method="post">
-    <h2 class="head">CÁC SẢN PHẨM ĐẶT MUA </h2>
-    <table class="show">
-        <thead>
-            <th>STT</th>
-            <th>Tên </th>
-            <th>Giá </th>
-            <th>Ảnh </th>
-            <th>Số lượng </th>
-        </thead>
-        <tbody>
-            <?php 
+    <div class="show">
+        <div class="title">
+            <h2 class="heading">CÁC SẢN PHẨM ĐẶT MUA </h2>
+        </div>
+        <table class="table">
+            <thead>
+                <th>STT</th>
+                <th>Tên </th>
+                <th>Giá </th>
+                <th>Ảnh </th>
+                <th>Số lượng </th>
+            </thead>
+            <tbody>
+                <?php 
             $count =1;
             foreach($orderdetails as $item):?>
-            <tr>
-                <td data-label="STT"><?php echo $count++;?></td>
-                <td data-label="TÊN"><?php echo $item['name'];?></td>
-                <td data-label="GIÁ"><?php echo number_format($item['price'],0,',','.');?></td>
-                <td data-label="ẢNH"><img src="../assets/upload_images/<?php echo $item['image'];?>" alt="" height="100" width="100"></td>
-                <td data-label="SỐ LƯỢNG">
-                    <input class="button-prev" type="button" value="+"
+                <tr>
+                    <td data-label="STT"><?php echo $count++;?></td>
+                    <td data-label="TÊN"><?php echo $item['name'];?></td>
+                    <td data-label="GIÁ"><?php echo number_format($item['price'],0,',','.');?></td>
+                    <td data-label="ẢNH"><img
+                            src="../assets/upload_images/<?php echo $item['image'];?>" alt=""
+                            height="100" width="100"></td>
+                    <td data-label="SỐ LƯỢNG">
+                    <input style="width:20px;height:20px" class="button-prev" type="button" value="+"
                         onclick="location='?option=order_detail&id=<?=$_GET['id']?>&action=update&type=asc&order_id=<?=$item['order_id']?>&product_id=<?=$item['product_id']?>'">
                     <?php echo $item['quantity'];?>
-                    <input class="button-next" type="button" value="-" <?=$item['quantity']==0?'disabled':''?>
+                    <input style="width:20px;height:20px" class="button-next" type="button" value="-" <?=$item['quantity']==0?'disabled':''?>
                         onclick="location='?option=order_detail&id=<?=$_GET['id']?>&action=update&type=desc&order_id=<?=$item['order_id']?>&product_id=<?=$item['product_id']?>'">
-                </td>
-            </tr>
-            <?php endforeach;?>
-        </tbody>
-    </table>
-    <h2>TRẠNG THÁI ĐƠN HÀNG </h2>
-    <p style="font-size:22px; display:<?=$order['status']==2|| $order['status']==3?'none;':''?>"><input type="radio"
-            name="status" value="1" <?=$order['status']==1?'checked':''?>>Chưa xử
+                    </td>
+                </tr>
+                <?php endforeach;?>
+            </tbody>
+        </table>
+    </div>
+    <div style="font-size:18px;margin-top:8px">TRẠNG THÁI ĐƠN HÀNG </div>
+    <p style="font-size:22px; display:<?=$order['status']==2|| $order['status']==3?'none;':''?>">
+        <input type="radio" name="status" value="1" <?=$order['status']==1?'checked':''?>>Chưa xử
         lý </p>
-    <p style="font-size:22px; display:<?=$order['status']==3?'none':''?>"><input type="radio" name="status" value="2"
-            <?=$order['status']==2?'checked':''?>>Đang xử
+    <p style="font-size:22px; display:<?=$order['status']==3?'none':''?>"><input type="radio"
+            name="status" value="2" <?=$order['status']==2?'checked':''?>>Đang xử
         lý </p>
-    <p style="font-size:22px;"><input type="radio" name="status" value="3" <?=$order['status']==3?'checked':''?>>Đã xử
+    <p style="font-size:22px;"><input type="radio" name="status" value="3"
+            <?=$order['status']==3?'checked':''?>>Đã xử
         lý</p>
-    <p style="font-size:22px; display:<?=$order['status']==3?'none':''?>"><input type="radio" name="status" value="4"
-            <?=$order['status']==4?'checked':''?>>Huỷ
+    <p style="font-size:22px; display:<?=$order['status']==3?'none':''?>"><input type="radio"
+            name="status" value="4" <?=$order['status']==4?'checked':''?>>Huỷ
     </p>
     <div class="btn">
         <input <?=$order['status']==3?'disabled':''?> type="submit" value="Cập nhật đơn hàng">
         <a href="?option=order&status=1" style="text-decoration: none;">&lt;&lt;Trở lại </a>
-    </div>               
+    </div>
 </form>
-</div>

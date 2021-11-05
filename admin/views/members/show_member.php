@@ -30,12 +30,15 @@ $result = $con->query($query);
                 <td data-label="ĐIỆN THOẠI"><?php echo $member['mobile'];?></td>
                 <td data-label="ĐỊA CHỈ "><?php echo $member['address'];?></td>
                 <td data-label="EMAIL"><?php echo $member['email'];?></td>
-                <td data-label="XOÁ"><a href="?option=show_member&id=<?=$member['member_id'];?>"
+                <td data-label="XOÁ">
+                    <a href="?option=show_member&id=<?=$member['member_id'];?>"
                         onclick="return confirm('Bạn có chắc muốn xoá thành viên này  ?')"
-                        class="btn btn--primary">Xoá </a></td>
-                <td data-label="SỬA"><a href="?option=edit_member&id=<?=$member['member_id'];?>"
-                        class="btn btn-secondary">Sửa</a></td>
-    
+                        class="btn btn--primary">Xoá </a>
+                </td>
+                <td data-label="SỬA">
+                    <a href="?option=edit_member&id=<?=$member['member_id'];?>"
+                        class="btn btn-secondary">Sửa</a>
+                </td>
             </tr>
             <?php endforeach;?>
         </tbody>
