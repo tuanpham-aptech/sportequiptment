@@ -26,6 +26,8 @@
 
 .header {
     display: flex;
+    /* position:fixed;
+    top: 0; */
     align-items: center;
     justify-content: space-between;
     padding-top: 15px;
@@ -325,4 +327,16 @@ color:blue;
 
 .form-group #brand-id,.form-group #image{
     width: 40%;
+}
+
+#noprint {
+    display: block;
+    width: 80px;
+    height: 40px;
+    text-decoration: none;
+    color:white;
+    text-align: center;
+    padding:8px;
+    background-color:blue;
+    outline: none;
 }

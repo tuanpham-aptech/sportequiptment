@@ -37,8 +37,11 @@
                 include "views/products/edit_products.php";
                 break;
             case 'order':
-              include "views/orders/list_order.php";
+              include "views/orders/option_order.php";
               break;
+            case 'list_order':
+                include "views/orders/list_order.php";
+                break;
             case 'xuatexcel':
               include "views/xuatexcels/xuatexcel.php";
               break;

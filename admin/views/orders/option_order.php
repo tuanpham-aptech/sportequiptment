@@ -7,17 +7,21 @@ if(isset($_GET['id'])){
   $delete_order_id = $con->query($queryorders);
   header('location:?option=order&status=4');
 }
-$query = "select *from  orders ";
+$status = $_GET['status'];
+$query = "select *from  orders where status =".$status;
 $result = $con->query( $query);
 ?>
-<table class="table" style="margin-top:8px">
+<div class="show">
+    <div class="title">
+        <h2 class="heading">ĐƠN HÀNG <?=$status ==1 ?'ĐƠN HÀNG CHƯA XỬ LÝ ':($status ==2?'ĐANG XỬ LÝ ':($status==3?'ĐÃ XỬ LÝ':'HUỶ'))?> </h2>
+    </div>
+<table class="table">
         <thead>
             <th>STT</th>
             <th>ID</th>
             <th>Ngày tạo </th>
             <th>Xoá </th>
-            <th>Chi tiết đơn hàng </th>
-            <th>In đơn hàng </th>
+            <th>Sửa</th>
         </thead>
         <tbody>
             <?php 
@@ -33,7 +37,6 @@ $result = $con->query( $query);
                         class="detete">Xoá </a></td>
                 <td><a href="?option=order_detail&id=<?=$item['id'];?>" class="edit">Chi tiết đơn hàng
                     </a></td>
-                <td><a target="_blank" href="?option=printorder&id=<?=$item['id'];?>">In đơn hàng </a></td>
             </tr>
             <?php endforeach;?>
         </tbody>

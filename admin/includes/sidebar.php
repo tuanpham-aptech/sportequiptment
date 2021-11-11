@@ -60,7 +60,7 @@ $huy = mysqli_num_rows($con->query("select *from orders where status =4 "));
                         </div>
                     </div>
                     <div class="sidebar-item">
-                        <a href="#!" class="sidebar-link">
+                        <a href="?option=list_order" class="sidebar-link">
                             <span class="sidebar-title">Đơn hàng  </span>
                             <i class="fas fa-chevron-down"></i>
                         </a>
