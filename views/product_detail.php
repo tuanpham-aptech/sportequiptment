@@ -43,3 +43,26 @@ $result = $con->query($query);
 </div>
 <?php endforeach;?>
 </div>
+<div class="row">
+    <div class="comment-wrap">
+        <h2>Bình luận sản phẩm </h2>
+        <?php 
+        $comments= $con->query("select *from members a join comments b on a.member_id =b.member_id join products c on b.product_id = c.product_id where b.status=1 and b.product_id ='$_GET[id]' ");
+        if(mysqli_num_rows($comments)==0){
+            echo "Không có comment nào !";
+        }else{
+            foreach($comments as $com):
+        ?>
+        <div class="user-comment"><i class="fas fa-user-tie"></i><span><?=$com['fullname'];?></span></div>
+        <div class="comment-desc"><span><?=$com['content'];?></span></div>
+        <?php
+            endforeach;
+        }
+        ?>
+        <form class="cmt-form" action="" method="post">
+            <textarea name="comment" placeholder="Add a public comment..."></textarea>
+
+            <input type="submit" value="Gửi">
+        </form>
+    </div>
+</div>

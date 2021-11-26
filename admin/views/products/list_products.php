@@ -22,12 +22,12 @@ $result = $con->query( $query);
             <th>STT</th>
             <th>ID</th>
             <th>TÊN</th>
-            <th>Giá </th>
-            <th>Ảnh </th>
-            <th>Mô tả </th>
-            <th>Xoá </th>
-            <th>Sửa</th>
-            <th>Trạng thái </th>
+            <th>GIÁ </th>
+            <th>ẢNH </th>
+            <th>MÔ TẢ</th>
+            <th>XOÁ </th>
+            <th>SỬA</th>
+            <th>TRẠNG THÁI</th>
         </thead>
         <tbody>
             <?php

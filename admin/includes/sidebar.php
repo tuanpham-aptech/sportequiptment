@@ -4,7 +4,7 @@ $dangxuly = mysqli_num_rows($con->query("select *from orders where status =2 "))
 $daxuly = mysqli_num_rows($con->query("select *from orders where status =3 "));
 $huy = mysqli_num_rows($con->query("select *from orders where status =4 "));
 ?>
-<div class="sidebar">
+<div class="sidebar" id="sidebar">
                 <div class="sidebar-main">
                     <div class="sidebar-item">
                         <a href="#!" class="sidebar-link">
@@ -80,38 +80,22 @@ $huy = mysqli_num_rows($con->query("select *from orders where status =4 "));
                         </div>
                     </div>
                     <div class="sidebar-item">
-                        <a href="#!" class="sidebar-link">
-                            <span class="sidebar-title">Xuất excel </span>
+                        <a href="index.php?option=list_comment" class="sidebar-link">
+                            <span class="sidebar-title">Comments </span>
                             <i class="fas fa-chevron-down"></i>
                         </a>
-                        <div class="sidebar-drop-list">
-                            <div class="sidebar-drop-item">
-                                <a href="index.php?option=xuatexcel">Xuất bảng members </a>
-                            </div>
-                        </div>
                     </div>
                     <div class="sidebar-item">
                         <a href="#!" class="sidebar-link">
-                            <span class="sidebar-title">In ấn </span>
+                            <span class="sidebar-title">Databases </span>
                             <i class="fas fa-chevron-down"></i>
                         </a>
                         <div class="sidebar-drop-list">
                             <div class="sidebar-drop-item">
-                                <a href="index.php?option=printmember">In bảng members </a>
+                                <a href="?option=export_database">Xuất database</a>
                             </div>
                             <div class="sidebar-drop-item">
-                                <a href="index.php?option=printorder">In đơn hàng </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sidebar-item">
-                        <a href="#!" class="sidebar-link">
-                            <span class="sidebar-title">Import file </span>
-                            <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <div class="sidebar-drop-list">
-                            <div class="sidebar-drop-item">
-                                <a href="index.php?option=importmember">Import members </a>
+                                <a href="?option=import_database">Thêm database </a>
                             </div>
                         </div>
                     </div>

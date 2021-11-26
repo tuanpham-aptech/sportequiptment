@@ -34,7 +34,7 @@ $brand = $con->query("select *from brands");
 $category = $con->query("select *from categories");
 ?>
 <div class="form-container diffirent">
-    <div class="head">Thêm sản phẩm </div>
+    <div class="head">THÊM SẢN PHẨM</div>
     <hr class="horiz">
     <div class="div1">
         <form  method="post" enctype="multipart/form-data">

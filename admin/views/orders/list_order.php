@@ -14,10 +14,10 @@ $result = $con->query( $query);
         <thead>
             <th>STT</th>
             <th>ID</th>
-            <th>Ngày tạo </th>
-            <th>Xoá </th>
-            <th>Chi tiết đơn hàng </th>
-            <th>In đơn hàng </th>
+            <th>NGÀY TẠO </th>
+            <th>XOÁ </th>
+            <th>ĐƠN HÀNG  </th>
+            <th>IN HOÁ ĐƠN </th>
         </thead>
         <tbody>
             <?php 

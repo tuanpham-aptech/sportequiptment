@@ -46,7 +46,7 @@ $category = $con->query("select *from categories");
 
 ?>
 <div class="form-container">
-    <div class="head">Chỉnh sửa sản phẩm </div>
+    <div class="head">CHỈNH SỬA SẢN PHẨM </div>
     <hr class="horiz">
     <div class="div1">
         <form  method="post" enctype="multipart/form-data">

@@ -25,15 +25,17 @@ $order = mysqli_fetch_array($con->query($sql));
 ?>
 <div class="show">
     <div class="title">
-        <h2 class="heading">CHI TIẾT ĐƠN HÀNG <br><span style="font-size:18px">MÃ ĐƠN HÀNG
-                (<?=$order['id']?>)</span></h2>
+        <h2 class="heading" style="font-size:32px; text-align:center;">CHI TIẾT ĐƠN HÀNG <br></h2>
+        <div style="font-size:18px; text-align:center;"><p >MÃ ĐƠN HÀNG
+                (<?=$order['id']?>)</p>
+                <p style="color:blue;"><?=$order['orderdate'];?></p>
+        </div>
+
     </div>
 </div>
-<span class="head">NGÀY TẠO ĐƠN </span>
-<div style="color:red; font-size:1.4rem;" class="orderdate"><?=$order['orderdate'];?></div>
 <div class="show">
     <div class="title">
-        <h2 class="heading">THÔNG TIN NGƯỜI ĐẶT HÀNG </h2>
+        <p class="heading">THÔNG TIN NGƯỜI ĐẶT HÀNG </p>
     </div>
     <table class="table">
         <thead>
@@ -56,7 +58,7 @@ $order = mysqli_fetch_array($con->query($sql));
 </div>
 <div class="show">
     <div class="title">
-        <h2 class="heading">THÔNG TIN NGƯỜI NHẬN HÀNG </h2>
+        <p class="heading">THÔNG TIN NGƯỜI NHẬN HÀNG </p>
     </div>
     <table class="table">
         <tbody>
@@ -70,7 +72,7 @@ $order = mysqli_fetch_array($con->query($sql));
     </table>
 </div>
 <div class="title">
-    <h2 class="heading">PHƯƠNG THỨC THANH TOÁN </h2>
+    <p class="heading">PHƯƠNG THỨC THANH TOÁN </p>
     <h2 class="heading" style="color:red;font-size:15px;padding-top:8px;">
         <?= $order['nameordermethod'];?></h2>
 </div>
@@ -81,7 +83,7 @@ $orderdetails = $con->query($query);
 <form method="post">
     <div class="show">
         <div class="title">
-            <h2 class="heading">CÁC SẢN PHẨM ĐẶT MUA </h2>
+            <p class="heading">CÁC SẢN PHẨM ĐẶT MUA </p>
         </div>
         <table class="table">
             <thead>

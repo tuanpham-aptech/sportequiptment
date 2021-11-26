@@ -24,7 +24,7 @@ header("Pragma: no-cache");
 <body>
     <div class="wrapper">
         <div class="container">
-            <header class="header">
+            <header class="header" id="header">
                 <div class="logo">
                     <a href="#!" class="logo-link">
                         Admin<span>area</span>

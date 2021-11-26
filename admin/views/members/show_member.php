@@ -10,6 +10,11 @@ $result = $con->query($query);
     <div class="title">
         <h2 class="heading">Danh sách thành viên </h2>
     </div>
+    <div style="position: fixed; z-index:99;  display:flex; align-items:center; column-gap:10px;top:104px; right:6px" id="export">
+        <a style="display:block;background:#00008B;color:#fff;text-decoration:none; padding:12px" id= "printmeber" href="index.php?option=xuatexcel">Xuất bảng members </a>
+        <a style="display:block;background:#00008B;color:#fff;text-decoration:none; padding:12px" href="index.php?option=printmember">In bảng members </a>
+        <a style="display:block;background:#00008B;color:#fff;text-decoration:none; padding:12px" href="index.php?option=importmember">Import members </a>
+    </div>
     <table class="table">
         <thead>
             <th>ID</th>
@@ -20,6 +25,7 @@ $result = $con->query($query);
             <th>EMAIL</th>
             <th>XOÁ</th>
             <th>SỬA</th>
+            <th>TRẠNG THÁI</th>
         </thead>
         <tbody>
             <?php foreach ($result as $member):?>
@@ -39,6 +45,12 @@ $result = $con->query($query);
                     <a href="?option=edit_member&id=<?=$member['member_id'];?>"
                         class="btn btn-secondary">Sửa</a>
                 </td>
+                <td data-label="TRẠNG THÁI">
+                    <?php if($member['status'] == 1){
+                    echo "Active";
+                    }else{
+                    echo "Unactive"; 
+                    }?></td>
             </tr>
             <?php endforeach;?>
         </tbody>

@@ -42,6 +42,12 @@
             case 'list_order':
                 include "views/orders/list_order.php";
                 break;
+            case 'list_comment':
+                include "views/comments/list_comment.php";
+                break;
+            case 'edit_comment':
+                include "views/comments/edit_comment.php";
+                break;
             case 'xuatexcel':
               include "views/xuatexcels/xuatexcel.php";
               break;
@@ -56,6 +62,12 @@
               break;
             case 'order_detail':
               include "views/orders/order_detail.php";
+              break;
+            case 'import_database':
+              include "views/imports/import_database.php";
+              break;
+            case 'export_database':
+              include "views/imports/export_database.php";
               break;
             case 'logout':
                 unset($_SESSION['admin']);

@@ -19,9 +19,9 @@ $result = $con->query( $query);
         <thead>
             <th>STT</th>
             <th>ID</th>
-            <th>Ngày tạo </th>
-            <th>Xoá </th>
-            <th>Sửa</th>
+            <th>NGÀY TẠO </th>
+            <th>XOÁ </th>
+            <th>SỬA</th>
         </thead>
         <tbody>
             <?php 
