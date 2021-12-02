@@ -48,7 +48,9 @@ $query = "select *from products where status = 1";
     <div class="pagination">
         <div class="button-prev"><i class="fas fa-chevron-left"></i></div>
         <?php for($i =1; $i <= $totalPages;$i++):?>
-            <a class="<?=(empty($_GET['page'])&& $i==1)|| $_GET['page']==$i ?'highlight':''?>" href="?page=<?php echo $i;?>"><?php echo $i?></a>
+            <div class="page-link">
+                <a class="<?=(empty($_GET['page'])&& $i==1)|| $_GET['page']==$i ?'highlight':''?>" href="?page=<?php echo $i;?>"><?php echo $i?></a>
+            </div>
         <?php endfor;?>
         <div class="button-next"><i class="fas fa-chevron-right"></i></div>
     </div>

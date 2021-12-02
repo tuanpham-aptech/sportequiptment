@@ -16,8 +16,8 @@ include "includes/db.php";
     <title>DESIGN PROJECT</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./assets/css/grid.css">
-    <link rel="stylesheet" href="./assets/css/base.css">
-    <link rel="stylesheet" href="./assets/css/style.css?v=11">
+    <link rel="stylesheet" href="./assets/css/base.css?v=1">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
 </head>
 <body>
@@ -81,9 +81,9 @@ include "includes/db.php";
                     </a>
                   <?php else: ?>
                     <a href="index.php?option=cart" class="header__search--cart"><i class="fas fa-shopping-cart"></i></a>
-                    <span class="header__search--qty">
+                    <!-- <span class="header__search--qty">
                         
-                    </span>
+                    </span> -->
                   <?php endif; ?>
                 </div> 
             </div>
@@ -100,7 +100,7 @@ include "includes/db.php";
             <nav class="header__navbar-mobile">
                 <ul class="header__navbar-list">
                     <li class="header__navbar-item">
-                        <a href="home.html" class="header__navbar-link"><span>Trang chủ</span></a>
+                        <a href="index.php?option=home" class="header__navbar-link"><span>Trang chủ</span></a>
                     </li>
                     <li class="header__navbar-item">
                         <a href="#" class="header__navbar-link"><span>Sản phẩm</span></a>

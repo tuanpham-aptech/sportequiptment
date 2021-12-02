@@ -12,7 +12,7 @@
     left:0;
     right:0;
     z-index: 22;
-    background-color: rgb(240, 37, 47);
+    background-color: #f6432e;
     height:120px;
     padding: 0 8rem;
 }
@@ -48,7 +48,7 @@
 .header__navbar .header__navbar-item .sub-nav{
     position: absolute;
     margin-top: 10px;
-    background-color:rgb(235, 34, 47);
+    background-color:#f6432e;
     box-shadow: 1px 15px 45px #ccc;
     display: none;
     width:300px;
@@ -204,7 +204,7 @@
     bottom: 0;
     width: 320px;
     max-width: 100%;
-    background-color:rgb(224, 60, 60);
+    background-color:#f6432e;
     transform: translateX(-100%);
     opacity: 0;
     transition: transform linear 0.2s, opacity linear 0.2s; /*làm trượt menu vào */ 
@@ -319,11 +319,6 @@
     display: none;
 }
 
-/* .sidebar__list-item:hover i{
-    color:#50c7c7;
-    transform: rotate(-180deg);
-} */
-
 .sidebar__list-item i{
     align-items: center;
     padding: 3px 0;
@@ -339,6 +334,7 @@
     flex: 1;
     padding: 0 4px;
 }
+
 .content__top{
     margin: 16px 0 8px 0;
 }
@@ -370,19 +366,20 @@
 }
 
 .product__title{
-    width:180px;
+    width:100%;
     min-height: 1.75rem;
 }
 .product__link{
     width:100%;
     color:var(--text-black);
+    font-size: 1.25rem;
     line-height: 20px;
     text-decoration: none;
 }
 
 .product__price{
     font-size: 18px;
-    color:var(--main-color);
+    color:#000;
 }
 
 .product__brand{
@@ -399,9 +396,9 @@
     padding: 4px 0 ;
 }
 .card__wrap-button-detail,.card__wrap-button-order{
-    max-width: 80px;
+    max-width: 110px;
     margin-left: 10px;
-    padding: 4px 2px;
+    padding: 10px;
     display: block;
     border-radius: 2px;
     border: #ccc 1px solid;
@@ -743,7 +740,7 @@ th {
     text-align: left;
     padding: 0.5rem;
     color:#ffff;
-    background-color:  rgb(240, 37, 47);
+    background-color:  #f6432e;
     font-weight: normal;
   }
   
@@ -775,7 +772,7 @@ th {
   }
   
   td a {
-    color: rgb(240, 37, 47);
+    color: #f6432e;
     font-size: 1.4rem;
   }
   
@@ -804,7 +801,7 @@ th {
 
   .total-price a {
     display: inline-block;
-    background-color:  rgb(240, 37, 47);
+    background-color:  #f6432e;
     color: #ffff;
     padding: 0.7rem 1.6rem;
     font-weight: 700;
@@ -812,7 +809,7 @@ th {
   }
   
   .total-price table {
-    border-top: 3px solid rgb(240, 37, 47);
+    border-top: 3px solid #f6432e;
     width: 100%;
     max-width: 35rem;
   }
@@ -854,21 +851,11 @@ th {
     width: 100%;
     padding:2px 8px;
 }
-.member-pass{
+
+.member-pass,.member-full,.member-mobile,.member-address,.member-email{
     padding:2px 8px;
 }
-.member-full{
-    padding:2px 8px;
-}
-.member-mobile{
-    padding:2px 8px;
-}
-.member-address{
-    padding:2px 8px;
-}
-.member-email{
-    padding:2px 8px;
-}
+
 .btn{
     display:inline-block;
     width:40px;
@@ -876,6 +863,7 @@ th {
     text-decoration: none;
     color:#202336;
 }
+
 .member-table--update {
     margin:0 auto;
 }
@@ -890,32 +878,45 @@ th {
 }
 
 .pagination {
+    margin-top: 15px;
     display:flex;
     align-items:center;
     justify-content: flex-end;
-    gap: 8px;
-    /* text-align: right; */
     width: 100%;
-    margin: 8px;
-    background-color:#50c7c7;
 }
 
-.pagination a{
-    background-color:orange;
-    display:inline-block;
-    padding:10px;
-    font-size: 24px;
+.pagination .page-link{
+    padding: 0;
+    text-align: center;
+    min-width: 2.5rem;
+    height: 1.875rem;
+    line-height:1.875rem;
+    background-color: #d0011b;
+    margin-left: 0.9375rem;
+    margin-right: 0.9375rem;
+}
+
+.pagination a {
+    font-size: 1.25rem;
     text-decoration: none;
-    color:#000;
+    color: #a9c0d9;
 }
 
-.pagination .button-prev {
-    color:#fff;
-    font-size:26px;
+.pagination .button-prev{
+    color: rgba(0,0,0,0.4);
+    min-width: 2.5rem;
+    height: 1.875rem;
+    border: none;
+}
+
+.button-prev i,.button-next i {
+    line-height: 1.875rem;
 }
 
 .pagination .button-next {
-    color:#fff;
-    font-size:26px;
+    color: rgba(0,0,0,0.4);
+    min-width: 2.5rem;
+    height: 1.875rem;
+    border: none;
     margin-right: 8px;
 }

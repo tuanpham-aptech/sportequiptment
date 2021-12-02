@@ -59,9 +59,9 @@ CREATE TABLE `comments` (
   `content` tinytext COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
-INSERT INTO comments VALUES("1","2","4","2021-08-04 23:22:10","Hoa trạng nguyên mua đích đấm nhẹ ","0");
+INSERT INTO comments VALUES("1","2","4","2021-08-04 23:22:10","Hoa trạng nguyên mua đích đấm nhẹ ","1");
 INSERT INTO comments VALUES("2","2","2","2021-08-04 23:24:27","Côn nhị khúc tôi cần video hướng dẫn sử dụng sản phẩm cảm ơn !!!","0");
 INSERT INTO comments VALUES("3","3","5","2021-08-04 23:26:49","Mũ va đập tốt mọi người nên mua ","1");
 INSERT INTO comments VALUES("4","3","5","2021-08-04 23:27:36","Nếu có nhiều hơn tôi sẽ ủng hộ shop!","0");
@@ -69,6 +69,7 @@ INSERT INTO comments VALUES("5","4","0","2021-08-05 08:50:21","Hoa sinh sắc ",
 INSERT INTO comments VALUES("6","4","2","2021-08-05 09:32:58","Côn nhị khúc quang sắc","1");
 INSERT INTO comments VALUES("7","1","4","2021-08-05 09:36:11","Hoa Bình Minh Trắng Trong","0");
 INSERT INTO comments VALUES("8","1","5","2021-08-05 09:40:30","Mũ chất liệu sốp hay cao su dẻo ad?","0");
+INSERT INTO comments VALUES("9","7","1","2021-12-02 17:12:34","Hàng tốt ","0");
 
 
 
@@ -112,7 +113,9 @@ CREATE TABLE `orderdetail` (
 INSERT INTO orderdetail VALUES("1","14","1","3200000");
 INSERT INTO orderdetail VALUES("2","14","2","210000");
 INSERT INTO orderdetail VALUES("2","15","2","210000");
+INSERT INTO orderdetail VALUES("2","16","1","210000");
 INSERT INTO orderdetail VALUES("3","15","1","1200000");
+INSERT INTO orderdetail VALUES("3","16","2","1200000");
 INSERT INTO orderdetail VALUES("4","15","1","250000");
 
 
@@ -147,10 +150,11 @@ CREATE TABLE `orders` (
   `email` varchar(30) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `note` varchar(100) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
-INSERT INTO orders VALUES("14","1","7","2021-11-04 16:12:59","1","Phạm Tuân","Yên Bái ","091337968","tuan.etc.764@apt.edu.vn","Hàng hậu mãi ");
+INSERT INTO orders VALUES("14","1","7","2021-11-04 16:12:59","3","Phạm Tuân","Yên Bái ","091337968","tuan.etc.764@apt.edu.vn","Hàng hậu mãi ");
 INSERT INTO orders VALUES("15","3","8","2021-11-04 16:47:43","1","Phạm Thanh Nga ","Hải dương","091337968","thanhnga@gmail.com","Giao đúng hẹn nhé ");
+INSERT INTO orders VALUES("16","1","7","2021-12-02 17:14:46","1","Phạm Tuân","Yên Bái ","091337968","tuan.etc.764@apt.edu.vn","Mua hàng giá rẻ ");
 
 
 

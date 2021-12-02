@@ -1,5 +1,5 @@
 @media (min-width:740px) and (max-width:1023px) {
-    .hide-on-mobile-tablet{
+    .hide-on-mobile-tablet,.header__navbar,.header__navbar-list .header__navbar-item:first-child{
         display: none;
     }
 
@@ -14,10 +14,6 @@
         font-size: 2rem;
     }
 
-    .header__navbar{
-        display: none;
-    }
-
     .header__navbar-mobile{
         padding-top:2.4rem ;
     }
@@ -27,21 +23,14 @@
         top: -6px;
         right: -20px;
     }
-    .header__navbar-list .header__navbar-item:first-child{
-        border-top:1px solid #ffff;
-    }
 
-    .header__search-wraper{
+    .header__search-wraper,.header__search--logo{
         display: none;
     }
 
     .header__navbar-item{
         display: block;
         border-bottom: 1px solid #ffff;
-    }
-
-    .header__search--logo{
-        display: none;
     }
     
     .header__navbar-link{
@@ -55,7 +44,6 @@
         font-weight: 300;
         padding: 0 0 0 0.5rem;
         text-transform: capitalize;
-        /* border-right: 2px solid hsla(0,0%,100%,.22); */
     }
 
     .header__navbar-link:hover{
@@ -165,6 +153,7 @@
 }
 .product__link{
     width:100%;
+    font-size:1.25rem;
     color:var(--text-black);
     line-height: 20px;
     text-decoration: none;
@@ -172,7 +161,7 @@
 
 .product__price{
     font-size: 18px;
-    color:var(--main-color);
+    color:#000;
 }
 
 .product__brand{
@@ -273,7 +262,6 @@ td img {
 
 .cart-info {
     display: flex;
-    /* flex-wrap: wrap; */
 }
 
 .cart-quantity span{
@@ -285,10 +273,6 @@ td img {
 
 }
 @media(max-width:750px){
-    .hide-on-mobile-tablet{
-        display: none;
-    }
-
     .header{
         height: 48px;
         display: flex;
@@ -300,15 +284,11 @@ td img {
         font-size: 2rem;
     }
 
-    .header__navbar{
-        display: none;
-    }
-
     .header__navbar-mobile{
         padding-top:0.4rem ;
     }
 
-    .header__search-wraper{
+    .header__search-wraper,.header__search--logo,.header__navbar,.hide-on-mobile-tablet{
         display: none;
     }
 
@@ -323,10 +303,6 @@ td img {
     .header__navbar-item{
         display: block;
         border-bottom: 1px solid #ffff;
-    }
-
-    .header__search--logo{
-        display: none;
     }
     
     .header__navbar-link{
@@ -419,14 +395,14 @@ td img {
     }
 
     .product__title{
-        font-size: 1.4rem;
+        font-size: 2.2rem;
         width:100%;
         min-height: 1.75rem;
     }
 
     .product__price{
         font-size: 24px;
-        color:var(--main-color);
+        color:#000;
     }
 
     .card__wrap-img-top img {
